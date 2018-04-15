@@ -1,6 +1,7 @@
 package com.kovalchuk.genericsRawType;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TestWildcardsParameters {
@@ -37,7 +38,10 @@ public class TestWildcardsParameters {
         strList.add("100");
         printList(strList);
 
-        List<? super Integer> intList = new ArrayList<Number>();
+        List<? super Integer> intList = new LinkedList<Object>();//<? super Integer> - означає що можуть бути типи Integer та його батьки
+        //List<? super Integer> intList = new ArrayList<Number>();//Добавити елементи не зможемо так як неможливо визначити тип Number
+        intList.add(2);
+        intList.add(15);
         System.out.println("The intList is: " + intList);
     }
 }
